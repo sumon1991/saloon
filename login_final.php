@@ -231,7 +231,7 @@ $(document).ready(function(){
     </form>
   </div>
 </div>
-<!-- index--><a id="index" href="index.html" title="View my index!"><i class="fa fa-link"></i></a>
+<!-- index--><a id="index" href="index.php" title="View my index!"><i class="fa fa-link"></i></a>
   </div>
 </div>
 </body>
