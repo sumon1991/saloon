@@ -166,7 +166,8 @@ $(document).ready(function(){
         <div class="bar"></div>
       </div>
       <div class="button-container">
-	  <input type="submit" name="Go" value="Go">
+	  <!-- <input type="submit" name="Go" value="Go">  -->
+	  <button name="Go" value="Go"><span>Go</span></button>
               </div>
  </form>
  <div class="footer">
@@ -219,9 +220,10 @@ $(document).ready(function(){
         <label for="RepeatPassword">Repeat Password</label>
         <div class="bar">
 		</div>
+		</div>
 		<div class = "button-container">
-		
-		<input type="submit"  name="Next1" value="Next1">
+		<button name="Next1" value="Next1"><span>Next</span></button>
+		<!-- <input type="submit"  name="Next1" value="Next1"> -->
 		</div>
 	  
      		
