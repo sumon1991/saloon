@@ -1,0 +1,16 @@
+[08-Nov-2016 18:41:12 UTC] PHP Warning:  unlink(user_images/204303.jpg): No such file or directory in /home/ubuntu/workspace/saloon/admin/login/editform.php on line 41
+[08-Nov-2016 18:41:12 UTC] PHP Stack trace:
+[08-Nov-2016 18:41:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/saloon/admin/login/editform.php:0
+[08-Nov-2016 18:41:12 UTC] PHP   2. unlink() /home/ubuntu/workspace/saloon/admin/login/editform.php:41
+[13-Nov-2016 06:49:31 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/saloon/admin/login/image_up.php on line 89
+[13-Nov-2016 06:49:31 UTC] PHP Stack trace:
+[13-Nov-2016 06:49:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/saloon/admin/login/image_up.php:0
+[13-Nov-2016 06:49:33 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/saloon/admin/login/image_up.php on line 89
+[13-Nov-2016 06:49:33 UTC] PHP Stack trace:
+[13-Nov-2016 06:49:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/saloon/admin/login/image_up.php:0
+[13-Nov-2016 06:49:34 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/saloon/admin/login/image_up.php on line 89
+[13-Nov-2016 06:49:34 UTC] PHP Stack trace:
+[13-Nov-2016 06:49:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/saloon/admin/login/image_up.php:0
+[13-Nov-2016 06:56:41 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/saloon/admin/login/image_up.php on line 89
+[13-Nov-2016 06:56:41 UTC] PHP Stack trace:
+[13-Nov-2016 06:56:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/saloon/admin/login/image_up.php:0
