@@ -54,6 +54,55 @@ echo "Test 1";
 //encrypt password and password 2 using md5 before sending to database
 $pswd = md5($pswd);
 $pswd2 = md5($pswd2);
+
+
+//Php mail function
+
+if(isset($_POST['Next1'])) 
+{
+  $sendmailid = $_POST['Email'];
+
+$message=
+'Full Name: '.$_POST['FullName'].'<br />
+ Password:  '.$_POST['Password'].'<br />
+ 
+ Email:  '.$_POST['Email'].'<br />
+
+';
+    require "phpmailer/class.phpmailer.php"; //include phpmailer class
+      
+    // Instantiate Class  
+    $mail = new PHPMailer();  
+      
+    // Set up SMTP  
+    $mail->IsSMTP();                // Sets up a SMTP connection  
+    $mail->SMTPAuth = true;         // Connection with the SMTP does require authorization    
+    $mail->SMTPSecure = "ssl";      // Connect using a TLS connection  
+    $mail->Host = "smtp.gmail.com";  //Gmail SMTP server address
+    $mail->Port = 465;  //Gmail SMTP port
+    $mail->Encoding = '7bit';
+    
+    // Authentication  
+    $mail->Username   = "sumon.animator@gmail.com"; // Your full Gmail address
+    $mail->Password   = "xbqmqmyzpetxvwql"; // Your Gmail password
+      
+    // Compose
+    $mail->SetFrom($_POST['Email'], $_POST['FullName']);
+    $mail->AddReplyTo($_POST['Email'], $_POST['FullName']);
+    $mail->Subject = "You have registered to Indian Long Haircuts";      // Subject (which isn't required)  
+    $mail->MsgHTML($message);
+ 
+    // Send To  
+    $mail->AddAddress($sendmailid, "Recipient Name"); // Where to send it - Recipient
+    $result = $mail->Send();    // Send!  
+  $message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
+  unset($mail);
+
+}
+
+//php mail function end
+
+
 $query = mysql_query("INSERT INTO users VALUES ('','$fulnm','$em','$pswd','$d','Y')");
 }
 }
@@ -114,6 +163,10 @@ if (isset($_POST["Go"])) {
 		exit();
 	}
 }
+
+
+
+
 ?>
 <html>
 <head>
@@ -182,11 +235,11 @@ $(document).ready(function(){
         <form action="" method="POST">
 
         <div class="input-container">
-          <input type="text" id="Email" required="required"/>
+          <input type="text" id="Email_forget" required="required"/>
           <label for="Email">Email</label>
           <div class="bar"></div>
         </div>
-      <div class="button-container" name="next">
+      <div class="button-container" name="next_forget">
 	  
         <button><span>Next</span></button>
       </div>
