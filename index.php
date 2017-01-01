@@ -130,7 +130,7 @@ if(isset($_POST["Logout"])) {
             <div id="menuzord" class="menuzord no-bg">
               <ul class="menuzord-menu">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li><a href="products.php">Products</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="videos.html">Videos</a></li>
                 <li><a href="contact.html">Contact</a></li>

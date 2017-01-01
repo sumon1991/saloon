@@ -1,10 +1,12 @@
 <?php include( "./inc/connect.php" ); ?>
 <?php
+			session_start();
 
+				if(isset($_SESSION["Email_login"])){
 
 //Set useful variables for paypal form
 $paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr'; //Test PayPal API URL
-$paypal_id = 'info@codexworld.com'; //Business Email
+$paypal_id = 'info@maxlloydtechno.com'; //Business Email
 
 ?>
 
@@ -83,6 +85,8 @@ $paypal_id = 'info@codexworld.com'; //Business Email
       <div class="container">
         <div class="row">
           <div class="col-md-4">
+		  <div style="color:#FFF; font-size:14pt; padding-top:1%;">
+           <abbr style="background-color: #494949; color:#fff; padding:2%;"title="USER LOGGED IN WITH THIS EMAIL ID"><?php echo $_SESSION["Email_login"]; ?></abbr></div>
           </div>
           <div class="col-md-6">
             <div class="widget m-0 mt-5 no-border">
@@ -206,14 +210,14 @@ $paypal_id = 'info@codexworld.com'; //Business Email
 						<input type="hidden" name="cmd" value="_xclick">
         
 						<!-- Specify details about the item that buyers will purchase. -->
-						<input type="hidden" name="item_name" value="<?php echo $row['name']; ?>">
+						<input type="hidden" name="item_name" value="<?php echo $row['videoName']; ?>">
 						<input type="hidden" name="item_number" value="<?php echo $row['id']; ?>">
-						<input type="hidden" name="amount" value="<?php echo $row['price']; ?>">
+						<input type="hidden" name="amount" value="<?php echo $row['videoPrice']; ?>">
 						<input type="hidden" name="currency_code" value="USD">
         
 						<!-- Specify URLs -->
-						<input type='hidden' name='cancel_return' value='http://localhost/paypal_integration_php/cancel.php'>
-						<input type='hidden' name='return' value='http://localhost/paypal_integration_php/success.php'>
+						<input type='hidden' name='cancel_return' value='http://localhost:81/saloon/cancel.php'>
+						<input type='hidden' name='return' value='http://localhost:81/saloon/success.php'>
 
         
 						<!-- Display the payment button. -->
@@ -394,6 +398,11 @@ $paypal_id = 'info@codexworld.com'; //Business Email
 <script src="js/custom.js"></script>
 
 </body>
-
+		<?php 
+		}else{
+						 //echo '<a href="login_final.php">Log In</a>';
+						 header ("Location: login_final.php");
+						}
+		?>
 <!-- Mirrored from kodesolution.com/demo/health-beauty/beauty-salon/v1.0/page-gallery-4col.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jul 2016 12:46:37 GMT -->
 </html>
